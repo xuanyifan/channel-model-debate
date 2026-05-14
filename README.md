@@ -3,8 +3,8 @@
 多模型迭代辩论 - 交叉论证版
 
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/xuanyifan/channel-model-debate/releases/latest)
-[![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)]()
-[![Python](https://img.shields.io/badge/python-3.8%2B-green)]()
+[![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)](#)
+[![Python](https://img.shields.io/badge/python-3.8%2B-green)](#)
 
 支持多渠道动态配置的 AI 交叉辩论引擎。配置多个兼容 Anthropic API 格式的渠道模型，让它们交叉辩论、互相挑刺，对设计方案进行迭代优化，或对代码实现进行交叉验证，自动收敛至工程可交付的最佳实践结论。
 
@@ -24,7 +24,7 @@ cp config.example.json config.json   # 编辑填入 API keys
 
 ```
 /channel-model-debate 设计一个用户登录模块
-/channel-model-debate 验证代码是否符合接口规范 --ctx ./api.py
+/channel-model-debate 验证代码是否符合接口规范
 ```
 
 ### 命令行直接调用
@@ -108,4 +108,8 @@ pip install -r requirements.txt
 
 ## 下载
 
-[Releases](https://github.com/xuanyifan/channel-model-debate/releases) · [v1.0.0 zip](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.zip) · [v1.0.0 tar.gz](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.tar.gz)
+| 版本 | 下载 | 大小 |
+|------|------|------|
+| [v1.0.0](https://github.com/xuanyifan/channel-model-debate/releases/tag/v1.0.0) | [zip](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.zip) · [tar.gz](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.tar.gz) | - |
+
+> 查看全部版本：[Releases](https://github.com/xuanyifan/channel-model-debate/releases)
