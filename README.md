@@ -6,9 +6,11 @@
 
 ## 安装
 
+双击 `install.command` 运行，或终端执行：
+
 ```bash
-cp config.example.json config.json   # 编辑填入你的 API keys
-chmod +x install.sh && ./install.sh
+cp config.example.json config.json   # 编辑填入 API keys
+./install.command
 ```
 > 首次运行 `install.sh` 时会自动从 `config.example.json` 创建 `config.json`（如不存在）。
 
