@@ -103,6 +103,7 @@ chmod +x examples/code_verify.sh
 
 ## 依赖
 
+- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code)
 - Python 3.8+
 - aiohttp
 
