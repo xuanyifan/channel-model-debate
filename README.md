@@ -105,3 +105,7 @@ chmod +x examples/code_verify.sh
 ```bash
 pip install -r requirements.txt
 ```
+
+## 下载
+
+[Releases](https://github.com/xuanyifan/channel-model-debate/releases) · [v1.0.0 zip](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.zip) · [v1.0.0 tar.gz](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.tar.gz)
