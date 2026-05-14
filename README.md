@@ -5,6 +5,7 @@
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/xuanyifan/channel-model-debate/releases/latest)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)](#)
 [![Python](https://img.shields.io/badge/python-3.8%2B-green)](#)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-CLI-orange)](https://docs.anthropic.com/en/docs/claude-code)
 
 支持多渠道动态配置的 AI 交叉辩论引擎。配置多个兼容 Anthropic API 格式的渠道模型，让它们交叉辩论、互相挑刺，对设计方案进行迭代优化，或对代码实现进行交叉验证，自动收敛至工程可交付的最佳实践结论。
 
