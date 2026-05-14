@@ -7,11 +7,11 @@
 ## 安装
 
 ```bash
+cp config.example.json config.json   # 编辑填入你的 API keys
 chmod +x install.sh
 ./install.sh
 ```
-
-安装后编辑 `config.json` 填入你的 API keys。
+> 首次运行 `install.sh` 时会自动从 `config.example.json` 创建 `config.json`（如不存在）。
 
 ## 使用方法
 
