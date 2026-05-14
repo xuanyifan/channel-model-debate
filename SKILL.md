@@ -2,7 +2,7 @@
 name: channel-model-debate
 description: '当用户要求"交叉论证"、"交叉辩论"、"多渠道交叉论证"、"多模型交叉论证"、"cross-channel debate"、"多渠道辩证"、"多模型辩证"、"交叉验证"、或需要多个AI模型互相挑刺迭代优化时触发。注意：当用户只是在做普通的代码实现、bug修复或技术问答时不要触发此skill，只在需要多模型交叉辩论迭代或交叉验证时触发。'
 license: MIT
-compatibility: 'Mac/Linux. 需要 python3 和 aiohttp。3个渠道: DeepSeek, PackyCode, MiniMax。'
+compatibility: 'Mac/Linux. 需要 python3 和 aiohttp。渠道由 config.json 配置，示例含 3 个渠道模板。'
 metadata:
   version: "1.4"
   channels:
