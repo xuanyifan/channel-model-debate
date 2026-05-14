@@ -12,7 +12,7 @@
 cp config.example.json config.json   # 编辑填入 API keys
 ./install.command
 ```
-> 首次运行 `install.sh` 时会自动从 `config.example.json` 创建 `config.json`（如不存在）。
+> 首次运行 `install.command` 时会自动从 `config.example.json` 创建 `config.json`（如不存在）。
 
 ## 使用方法
 
