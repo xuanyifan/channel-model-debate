@@ -112,4 +112,4 @@ pip install -r requirements.txt
 |------|-----|-------|
 | [v1.0.0](https://github.com/xuanyifan/channel-model-debate/releases/tag/v1.0.0) | [下载](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.zip) | [下载](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.tar.gz) |
 
-> 支持 macOS（Apple Silicon / Intel）。查看全部版本：[Releases](https://github.com/xuanyifan/channel-model-debate/releases)
+> 支持 macOS（Apple Silicon / Intel）。
