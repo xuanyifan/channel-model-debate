@@ -1,0 +1,21 @@
+{
+  "channels": {
+    "DeepSeek": {
+      "base_url": "https://api.deepseek.com/anthropic",
+      "auth_token": "YOUR_DEEPSEEK_TOKEN_HERE",
+      "model": "deepseek-v4-pro[1m]"
+    },
+    "PackyCode": {
+      "base_url": "https://www.packyapi.com",
+      "auth_token": "YOUR_PACKYCODE_TOKEN_HERE",
+      "model": "claude-opus-4-7"
+    },
+    "MiniMax": {
+      "base_url": "https://api.minimaxi.com/anthropic",
+      "auth_token": "YOUR_MINIMAX_TOKEN_HERE",
+      "model": "MiniMax-M2.7-highspeed"
+    }
+  },
+  "tavily_api_key": "YOUR_TAVILY_API_KEY",
+  "max_rounds": 10
+}
