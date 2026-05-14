@@ -20,9 +20,13 @@ if [ ! -f "$PROJECT_DIR/config.json" ]; then
     echo "⚠️ 已创建 config.json，请在项目目录编辑填入 API keys"
 fi
 
-# 安装 Python 依赖
-echo "📦 安装 Python 依赖..."
-pip install aiohttp --quiet
+# 安装 Python 依赖（已安装则跳过）
+if python3 -c "import aiohttp" 2>/dev/null; then
+    echo "✅ aiohttp 已安装，跳过"
+else
+    echo "📦 安装 aiohttp..."
+    pip install aiohttp --quiet || pip install aiohttp --break-system-packages --quiet
+fi
 
 echo ""
 echo "✅ 安装完成!"
