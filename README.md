@@ -108,8 +108,8 @@ pip install -r requirements.txt
 
 ## 下载
 
-| 版本 | 下载 | 大小 |
-|------|------|------|
-| [v1.0.0](https://github.com/xuanyifan/channel-model-debate/releases/tag/v1.0.0) | [zip](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.zip) · [tar.gz](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.tar.gz) | - |
+| 版本 | zip | tar.gz |
+|------|-----|-------|
+| [v1.0.0](https://github.com/xuanyifan/channel-model-debate/releases/tag/v1.0.0) | [下载](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.zip) | [下载](https://github.com/xuanyifan/channel-model-debate/archive/refs/tags/v1.0.0.tar.gz) |
 
 > 查看全部版本：[Releases](https://github.com/xuanyifan/channel-model-debate/releases)
