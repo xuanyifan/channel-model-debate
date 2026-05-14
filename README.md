@@ -8,9 +8,10 @@
 
 ```bash
 cp config.example.json config.json   # 编辑填入你的 API keys
-chmod +x install.sh
-./install.sh
+./install.command                    # 双击或终端运行皆可
 ```
+
+> 首次双击 `.command` 文件时，macOS 可能提示"无法验证开发者"，右键 → 打开即可。
 > 首次运行 `install.sh` 时会自动从 `config.example.json` 创建 `config.json`（如不存在）。
 
 ## 使用方法
