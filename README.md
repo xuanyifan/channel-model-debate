@@ -7,7 +7,10 @@
 [![Python](https://img.shields.io/badge/python-3.8%2B-green)](#)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-CLI-orange)](https://docs.anthropic.com/en/docs/claude-code)
 
-支持多渠道动态配置的 AI 交叉辩论引擎。配置多个兼容 Anthropic API 格式的渠道模型，让它们交叉辩论、互相挑刺，对设计方案进行迭代优化，或对代码实现进行交叉验证，自动收敛至工程可交付的最佳实践结论。
+在 Claude Code CLI 里，配置多渠道模型实现交叉论证——多个模型围绕议题辩论、互相挑刺、迭代优化，收敛为带论据支撑的工程可交付结论。
+
+- **设计方案辩论**：从零设计新方案时，多个模型头脑风暴并交叉论证，产出推荐架构和风险矩阵。
+- **代码实现验证**：对照设计文档验证代码，多视角挑出隐藏问题和遗漏边界。
 
 ## 安装
 
