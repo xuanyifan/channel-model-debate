@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 多模型迭代辩论 - 交叉论证版
-3渠道: DeepSeek, PackyCode, MiniMax
+多渠道: 由 config.json channels 配置
 
 每轮各模型给出论点 -> 互相挑刺 -> 优化己方 -> 重复直到共识或最大轮次
 
@@ -30,6 +30,19 @@ TAVILY_API_KEY = ""
 STATE_FILE = "/tmp/debate_state.json"
 SEARCH_ENABLED = False
 TOPIC = ""
+
+# per-model 上下文（Skill 层通过 --ctx-file 注入）
+_CONTEXT_DEFAULT = ""
+_CONTEXT_FULL = ""
+_OVER_LIMIT = set()
+
+
+def _ctx_for(model_name: str) -> str:
+    """按 model 标识名取上下文：超限模型用压缩版，其余用完整版"""
+    if _OVER_LIMIT and _CONTEXT_FULL:
+        cfg = MODELS.get(model_name, {})
+        return _CONTEXT_DEFAULT if cfg.get("model", "") in _OVER_LIMIT else _CONTEXT_FULL
+    return _CONTEXT_DEFAULT
 
 
 def load_config(config_path: str = None):
@@ -203,7 +216,8 @@ async def round_1_generate(session: aiohttp.ClientSession, topic: str, context: 
         base_text = f"议题: {topic}"
         tool = TOOL_INSTRUCTION if SEARCH_ENABLED else ""
         body = template.format(tool=tool)
-        prompt = f"{base_text}{context}\n\n{body}"
+        ctx = _ctx_for(name)
+        prompt = f"{base_text}{ctx}\n\n{body}"
         messages = [{"role": "user", "content": prompt}]
         return name, await call_model(session, name, messages)
 
@@ -255,7 +269,8 @@ async def round_n(session: aiohttp.ClientSession, topic: str, context: str, all_
         base_text = f"议题: {topic}"
         tool = TOOL_INSTRUCTION if SEARCH_ENABLED else ""
         body = template.format(all_args=all_arguments, tool=tool)
-        prompt = f"{base_text}{context}\n\n{body}"
+        ctx = _ctx_for(name)
+        prompt = f"{base_text}{ctx}\n\n{body}"
         messages = [{"role": "user", "content": prompt}]
         return name, await call_model(session, name, messages)
 
@@ -588,6 +603,7 @@ async def main():
     min_preserve_rounds = 2
 
     # 加载上下文（Skill 层通过 --ctx-file 传入已压缩的内容和窗口参数）
+    global _CONTEXT_DEFAULT, _CONTEXT_FULL, _OVER_LIMIT
     context = ""
     if ctx_file:
         print(f"\n📂 加载上下文文件: {ctx_file}")
@@ -595,10 +611,19 @@ async def main():
             with open(ctx_file, "r") as f:
                 ctx_data = json.load(f)
             context = ctx_data.get("context", "")
+            _CONTEXT_DEFAULT = context
+            _CONTEXT_FULL = ctx_data.get("context_full", "")
+            _OVER_LIMIT = set(ctx_data.get("over_limit", []))
             window = ctx_data.get("window", {})
             max_window_chars = window.get("max_chars", max_window_chars)
             min_preserve_rounds = window.get("min_preserve_rounds", min_preserve_rounds)
-            print(f"✅ 已加载压缩上下文 {len(context)} 字符，窗口参数 max_chars={max_window_chars} min_rounds={min_preserve_rounds}\n")
+            if _CONTEXT_FULL and _OVER_LIMIT:
+                ol_count = len(_OVER_LIMIT)
+                all_count = len(MODELS)
+                print(f"✅ 已加载 per-model 上下文: 完整 {len(_CONTEXT_FULL)} 字符, 压缩 {len(context)} 字符, 超限 {ol_count}/{all_count} 个模型")
+            else:
+                print(f"✅ 已加载统一上下文 {len(context)} 字符")
+            print(f"   窗口参数 max_chars={max_window_chars} min_rounds={min_preserve_rounds}\n")
         except Exception as e:
             print(f"❌ 读取 {ctx_file} 失败: {e}\n")
     else:

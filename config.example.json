@@ -3,17 +3,26 @@
     "DeepSeek": {
       "base_url": "https://api.deepseek.com/anthropic",
       "auth_token": "YOUR_DEEPSEEK_TOKEN_HERE",
-      "model": "deepseek-v4-pro[1m]"
+      "model": "deepseek-v4-pro[1m]",
+      "context_limit_tokens": 1000000
+    },
+    "ZhipuGLM": {
+      "base_url": "https://open.bigmodel.cn/api/anthropic",
+      "auth_token": "YOUR_ZHIPUGLM_TOKEN_HERE",
+      "model": "GLM-5.1",
+      "context_limit_tokens": 200000
     },
     "PackyCode": {
       "base_url": "https://www.packyapi.com",
       "auth_token": "YOUR_PACKYCODE_TOKEN_HERE",
-      "model": "claude-opus-4-7"
+      "model": "claude-opus-4-7",
+      "context_limit_tokens": 200000
     },
     "MiniMax": {
       "base_url": "https://api.minimaxi.com/anthropic",
       "auth_token": "YOUR_MINIMAX_TOKEN_HERE",
-      "model": "MiniMax-M2.7-highspeed"
+      "model": "MiniMax-M2.7-highspeed",
+      "context_limit_tokens": 204800
     }
   },
   "tavily_api_key": "YOUR_TAVILY_API_KEY",
